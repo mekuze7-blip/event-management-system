@@ -10,6 +10,12 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+    <scm>
+        <connection>scm:git:https://github.com/mekuze7/event-management-system.git</connection>
+        <developerConnection>scm:git:https://github.com/mekuze7/event-management-system.git</developerConnection>
+        <url>https://github.com/mekuze7/event-management-system</url>
+    </scm>
+
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>

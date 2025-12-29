@@ -1,0 +1,26 @@
+# -------------------------------------------------------------
+# TEAM SETUP INSTRUCTIONS
+# 1. Copy this file and rename it to 'ems_settings.properties'
+# 2. Replace the empty values below with your actual credentials
+# -------------------------------------------------------------
+
+# Database Settings
+dbUser=root
+dbPassword=YOUR_DB_PASSWORD
+
+# Infobip SMS Settings (Ask Team Lead for keys)
+infobipApiKey=YOUR_API_KEY
+infobipBaseUrl=YOUR_BASE_URL
+
+# SMTP Email Settings
+useSmtp=true
+smtpHost=smtp.gmail.com
+smtpPort=465
+smtpEmail=YOUR_EMAIL@gmail.com
+smtpPassword=YOUR_APP_PASSWORD
+
+# App Settings
+phoneNumber=+251900000000
+smsEnabled=true
+emailEnabled=true
+emailSender=noreply@ems.com
