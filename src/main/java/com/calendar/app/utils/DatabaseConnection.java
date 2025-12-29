@@ -3,18 +3,37 @@ package com.calendar.app.utils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class DatabaseConnection {
     private static Connection connection = null;
     private static final String URL = "jdbc:mysql://localhost:3306/event_management?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-    private static final String USER = "root";
-    private static final String PASSWORD = "122119me";
+    private static String USER = "root";
+    private static String PASSWORD = "";
     
+    static {
+        // Try to load credentials from ems_settings.properties
+        try (FileInputStream fis = new FileInputStream("ems_settings.properties")) {
+            Properties props = new Properties();
+            props.load(fis);
+            if (props.containsKey("dbUser")) USER = props.getProperty("dbUser");
+            if (props.containsKey("dbPassword")) PASSWORD = props.getProperty("dbPassword");
+        } catch (IOException e) {
+            // Fallback to Environment Variables if file not found
+            String envUser = System.getenv("DB_USER");
+            if (envUser != null) USER = envUser;
+            String envPass = System.getenv("DB_PASSWORD");
+            if (envPass != null) PASSWORD = envPass;
+        }
+    }
+
     public static Connection getConnection() {
         if (connection == null) {
             try {
                 System.out.println("🔌 Attempting database connection...");
-                System.out.println("URL: " + URL.replace(PASSWORD, "***"));
+                System.out.println("URL: " + URL);
                 System.out.println("User: " + USER);
                 
                 // Load MySQL driver

@@ -70,15 +70,15 @@ public class Main extends Application {
     private String emailSenderAddress = "noreply@ems.com";
     private final String CONFIG_FILE = "ems_settings.properties";
     private Properties appSettings = new Properties();
-    private String infobipApiKey = "501a6d1c0532ef04d793d8d10e31fcb4-a035a4d0-a018-462c-9b4f-abe8e4e174f6";
-    private String infobipBaseUrl = "https://l2rkvw.api.infobip.com";
+    private String infobipApiKey = "";
+    private String infobipBaseUrl = "";
     
     // SMTP Settings (Native Implementation)
     private boolean useSmtp = true;
-    private String smtpHost = "smtp.gmail.com";
-    private String smtpPort = "465";
-    private String smtpEmail = "mekuze7@gmail.com";
-    private String smtpPassword = "fxlvokgqynsazmjj";
+    private String smtpHost = "";
+    private String smtpPort = "";
+    private String smtpEmail = "";
+    private String smtpPassword = "";
     
     @Override
     public void start(Stage primaryStage) {
@@ -2466,15 +2466,9 @@ public class Main extends Application {
                     emailSenderAddress = appSettings.getProperty("emailSender", "noreply@ems.com");
                     
                     // Load credentials, but force update if they appear to be the old ones
-                    String loadedKey = appSettings.getProperty("infobipApiKey", "501a6d1c0532ef04d793d8d10e31fcb4-a035a4d0-a018-462c-9b4f-abe8e4e174f6");
-                    String loadedUrl = appSettings.getProperty("infobipBaseUrl", "https://l2rkvw.api.infobip.com");
+                    infobipApiKey = appSettings.getProperty("infobipApiKey", "");
+                    infobipBaseUrl = appSettings.getProperty("infobipBaseUrl", "");
                     
-                    // Auto-fix old credentials if found in file
-                    if (loadedKey.startsWith("a86c")) infobipApiKey = "501a6d1c0532ef04d793d8d10e31fcb4-a035a4d0-a018-462c-9b4f-abe8e4e174f6";
-                    else infobipApiKey = loadedKey;
-                    
-                    if (loadedUrl.contains("2yd8ym")) infobipBaseUrl = "https://l2rkvw.api.infobip.com";
-                    else infobipBaseUrl = loadedUrl;
                     
                     // Load SMTP settings, preserving defaults if config is empty
                     useSmtp = Boolean.parseBoolean(appSettings.getProperty("useSmtp", "true"));
