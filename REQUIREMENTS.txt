@@ -1,0 +1,23 @@
+System Requirements
+===================
+
+1. Java Development Kit (JDK)
+   - Version: JDK 25 or higher
+   - Required for: Compiling and running the JavaFX application.
+
+2. Apache Maven
+   - Version: 3.9.11 or higher
+   - Required for: Dependency management and building the project.
+
+3. Database
+   - MySQL Server (Version 8.0 recommended)
+   - Required for: Storing user data, events, and logs.
+
+4. Internet Connection
+   - Required for: Sending SMS (Infobip API) and Email (SMTP) notifications.
+
+Dependencies (Managed via Maven)
+================================
+- JavaFX Controls (25.0.1)
+- JavaFX FXML (25.0.1)
+- MySQL Connector/J (8.0.33)
