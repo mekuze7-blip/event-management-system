@@ -13,7 +13,7 @@ A JavaFX desktop application for managing schedules, events, and automated notif
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/mekuze7/event-management-system.git
+   git clone https://github.com/mekuze7-blip/event-management-system.git
    cd event-management-system
    ```
 

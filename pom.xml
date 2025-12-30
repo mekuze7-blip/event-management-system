@@ -11,9 +11,9 @@
     <packaging>jar</packaging>
 
     <scm>
-        <connection>scm:git:https://github.com/mekuze7/event-management-system.git</connection>
-        <developerConnection>scm:git:https://github.com/mekuze7/event-management-system.git</developerConnection>
-        <url>https://github.com/mekuze7/event-management-system</url>
+        <connection>scm:git:https://github.com/mekuze7-blip/event-management-system.git</connection>
+        <developerConnection>scm:git:https://github.com/mekuze7-blip/event-management-system.git</developerConnection>
+        <url>https://github.com/mekuze7-blip/event-management-system</url>
     </scm>
 
     <properties>
